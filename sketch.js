@@ -171,7 +171,7 @@ function caseSite() {
               function movement(){
 
                 let x = Math.round(map(mouseX,0,screenWidth,0,amount-1));
-                let y = Math.round(map(mouseY,0,screenWidth,0,amount-1));;
+                let y = Math.round(map(mouseY,0,screenWidth,0,amount-1));
               
                 if(x < amount && y < amount){
                   segments[x][y].pulsate();
@@ -260,7 +260,7 @@ function caseSite() {
 
             cP("I ajusted my grid so it also fills the whole screen with rectangles instead of trying to partually fill it with squares. Second step was adding prefixed rectangles to every Grit Element and giving them a certain rotation that applies to all of them simultaniously. Since I already have a prefixed Method that checks the x and y mouse position and applies changes to just the closest one I kept on working with that.")
             
-            cH3("Ajustments")
+            cH3("Adjustments")
             cP("After ajusting the grid system I did notice a small glitch that looked quite nice though.")
 
             cImage("Doku/14.png");
