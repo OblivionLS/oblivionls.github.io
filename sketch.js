@@ -67,7 +67,7 @@ function setup() {
         cIndex();
         
     }
-
+    topScroll = 0;
     
 }
 
@@ -140,7 +140,7 @@ function caseSite() {
             
             cH1("Welcome To My Page")
             cH2("Short Introduction")
-            cP("When you click on the documentation in the menu you will find a bunch of pictures and descriptions to the process I have made in the HSLU module 'Generative Computer Graphics'. There are also some links below certain pictures that will lead to a p5 sketch that can be tried out and acessed on your own behalf.");
+            cP("When you click on the documentation in the menu you will find a bunch of pictures and descriptions to the process I have made in the HSLU module 'Generative Computer Graphics'. There are also some links beneath certain pictures that will lead to a p5 sketch that can be tried out right away.");
             
             break;
         case "/documentation.html":
