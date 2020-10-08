@@ -1,0 +1,210 @@
+:root {
+    --background: rgb(4, 31, 37);
+    --content-background: rgba(21, 21, 21, 0.6);
+    --header: rgba(130, 155, 252, 0.185);
+    --footer: rgb(20, 38, 54);
+
+    --title: rgb(121, 252, 210);
+    --text: rgb(184, 218, 207);
+
+}
+
+div{
+    color: var(--text);
+}
+
+
+p  {
+    color: var(--text) !important;
+    
+}
+
+ul{
+    height: 100%;
+    width:100%;
+}
+
+li {
+    color: var(--text) !important;
+    text-decoration: none;
+    position: relative;
+    top:50%;
+    width: 90%;
+    text-align: left;
+    list-style: none;
+    font-size: 1.4em;
+}
+
+ul li ul li{
+    font-size: 0.85em !important;
+    list-style-type: disc;
+}
+
+h1 {
+    float: left;
+    color: var(--title);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    font-size: 3.5em;
+    margin: 30px 0 10px !important;
+    width: 100%;
+
+}
+
+h2{
+    float: left;
+    color: var(--text);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    font-style: normal;
+    margin: 20px 0 5px !important;
+    width: 100%;
+}
+
+h3{
+    float: left;
+    color: var(--text);
+    font-style: normal;
+    margin: 0px 0 5px !important;
+    width: 100%;
+}
+
+#code{
+    float: left;
+    margin: 10px 0 5px !important;
+    width: 100%;
+    padding-bottom: 0px;;
+    padding-right: 10%;
+    position: relative;
+    left: 5%;
+    right: 10%;
+    margin-right: 10%;
+
+}
+
+code{
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: -45px;
+    overflow:scroll;
+    z-index: 10;
+    max-height: 500px;
+}
+
+
+
+#container h1,#container p, #container h2, #container h3{
+    position: relative;
+    left: 5%;
+    right: 10%;
+    margin-right: 10%;
+}
+
+#container .column{
+    float: left;
+    width: 50%;
+      
+}
+
+
+body {
+    background-color: var(--background);
+}
+
+#pics{
+    width:100%;
+    position: relative;
+    margin-top: 5px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+#pic{
+    margin-right: 0;
+    width:100%;
+    position: relative;
+    margin-top: 5px;
+    object-fit: cover;
+    margin-bottom: 0px;
+}
+
+#pics + #pic{
+    margin-top: 0px;
+}
+
+#pics + p , #pic + p {
+    margin-top:2px;
+}
+
+#picChange{
+    left: 5%;
+    right: 10%;
+}
+
+#header{
+    background-color: var(--header);
+    position: fixed; 
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    height: 100%;
+    z-index: 50;
+}
+
+#header h1{
+    top:10%;
+    position: absolute;
+    width: 90%;
+    text-align: center;
+}
+
+#header p{
+    font-size: 1.2em;
+    position: relative;
+    top:50%;
+    width: 90%;
+    text-align: center;
+}
+
+#container {
+    background-color: var(--content-background);
+    min-height: 1000px;
+    width: unset;
+    margin-left: unset;
+    margin-right: 3% !important;
+    padding-top:unset;
+    padding-left: unset;
+    padding-right: unset;
+    z-index: 20;
+
+}
+
+#content {
+    padding-right: unset;
+    padding-left: unset;
+    width: unset;
+
+}
+
+#footer {
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    margin-left: -16px;
+    background-color: var(--footer) !important; 
+}
+
+#myCanvas {
+    z-index: 9;
+    position: fixed;
+}
+
+#preview{
+    background: none;
+    z-index: 10;
+    text-align: center;
+}
+
+#preview, a, p {
+    text-decoration: none !important;
+}
+
