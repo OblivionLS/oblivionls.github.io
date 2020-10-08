@@ -155,17 +155,17 @@ function caseSite() {
             //--------------------------- DAY 1 -------------------------------
             //==================================================================
             cH2("Day 1");
-            cP("First off I set up the project in Atom and started looking at some of the references.The WebGL projects look super cool so I have decided to work with p5.js and the WEBGL mode they have for 3D projects.Started easy by rotating a rectangle. By not resetting the canvas it then creates a circle background of itself.I made another rotating box this time and by rotating not only the Z but also the Y axis in different speeds I have created a different splatter underneath the box.");
+            cP("First off I set up a project in Atom and started looking at some of the references. The WebGL projects look super cool so I decided to start with p5.js and the WEBGL mode for 3D projects. Started out easy by rotating a rectangle. By not resetting the canvas it then creates a circle background of itself. I then made another rotating box and by rotating not only the Z but also the Y axis in different speeds it created a splatter underneath the box.");
 
             cImage("/Doku/01.rotating_box.png")
-            cP("The effect is quite nice so I might come back to it.")
+            cP("The effect is quite nice so I might come back to it later on. I wanted to try out a 2D project first that came to mind when we were talking about grid systems in the daily input.")
 
             cH3("2D experiment");
-            cP("created segments on the canvas. When the mouse is hovering over a segment, squares with randoms size are created inside that segment.The amount of squares on the screen can be set to any number wished and as soon as the mouse is klicked once the loop stops and the final picture stayes on the screen.")
+            cP("First step was creating segments on the canvas. When the mouse is hovering over a segment, squares with randoms size are created inside that element. The amount of squares on the screen can be set to any number and as soon as the mouse is klicked once the loop stops and the final picture stayes on the screen. Stopping the loop is achived by simply calling on the p5 noLoop() function with the preset mouseClicked() function.")
 
             cImage("/Doku/02.2D Squaregrid.png")
 
-            cP("Further on edited it so that the squares are only drawn when the mouse is actively moving over the screen. Otherwise nothing happens.");
+            cP("Further on I edited it so that the squares are only drawn when the mouse is actively moving over the screen. So if the cursor is standing still over a segment nothing happens.");
             createNewClone();
             child.innerHTML = (
               function movement(){
@@ -179,24 +179,22 @@ function caseSite() {
               }
             );
             cPre();
-            cP("The function is called then the mouse is moved over the screen. If I called it mouseMoved it would do that automatically but I only found that out later.")
+            cP("The function above is called when the mouse is moved over the screen. I found out later on that if I called it mouseMoved() it would do that automatically but this way I have to call on it seperately.")
             cImage("/Doku/03.compact_squaregrid.png");
             cLink("https://editor.p5js.org/Oblivia/present/m0jfD-OXq", linkText);
 
-            cH3("Errors")
-            cP("while trying to get some rotation in to the whole thing I have made some coding error which resulted in a very unexpected image.");
+            cH3("Bugs")
+            cP("while trying to get some rotation in to the whole thing I have made some mistaces in my calculations which resulted in a unexpected image.");
             cImage("Doku/04.coding_error.png");
 
-            cP("And turning the whole grid instead of just the elements on spot in the grit itself.");
+            cP("It was turning the whole grid instead of the elements in their grid cells.");
             cImage2("Doku/05 turning grid.png", "Doku/06 more errors.png");
 
-            cP("a lot of coding errors actually. I did not think this through.");
-
-            cP("even when it seemed to work at first it actually did not.")
+            cP("I made a lot of coding errors actually. I obviously was not thinking straight. Even when it seemed to work at first it actually did not.");
 
             cImage("Doku/07 almost there.png")
 
-            cP("In the end I figured out I was thinking of the wrong transformation point. Point (0,0) is on the top left cornor of the screen and not in the middle like I was thinking. I figured it out by simply placing a seperate square in the middle of the screen and rotating it.")
+            cP("In the end I figured out I was thinking of the wrong transformation point. Point (0,0) is on the top left corner of the screen and not in the middle like I was thinking. I figured it out by simply placing a seperate square in the middle of the screen and rotating it.")
             cImage("Doku/08 rotation solve.png");
 
             cH3("Correct Transformation");
@@ -231,7 +229,7 @@ function caseSite() {
 
 
         )
-            cP("So after that it wasn't that much of a bother anymore making it (mostly) work korrectly.")
+            cP("After that it wasn't that much of a bother anymore making it (mostly) work correctly. So for the correct transformation each square first has to be moved to the rotation center, be rotated and then moved back. A different solution would have been working with the functions push() and pop() the basics of what is happening is the same though.")
             
             cPre();
             
@@ -240,7 +238,7 @@ function caseSite() {
             cLink("https://editor.p5js.org/Oblivia/present/a5BGlCQpF", "Link to Sketch");
 
             cH3("Gridless")
-            cP("Decided to not draw the first, straight grid so the results are more surprising and the grid system is not recognisable from the start. To do this I simply commented out the calling of the this.draw() function in the constructor of the Segments.(See code above)")
+            cP("Decided to not draw the first, straight grid so the results are more surprising and the grid system is not recognisable from the start. To do this I simply commented out the calling of the first this.draw() function in the constructor of the Segments class. This can be seen in the code above.")
             
 
             cImage("Doku/12.png");
@@ -250,37 +248,38 @@ function caseSite() {
             //--------------------------- DAY 2 -------------------------------
             //==================================================================
             cH2("Day 2")
-            cP("Did a last ajustment to the prior project part and added some colour, that until a certain darkness is achived, gets darker when a grid part is activated.");
+            cP("I did a last ajustment to the prior script I made and added some colour. Until a certain darkness is achived, the colour just gets darker when a grid part is activated. Every Segment has it's own darkness parameter so it doesn't simultaniously turn everything darker.");
             cImage("Doku/13.png")
             cLink("https://editor.p5js.org/Oblivia/present/hKEAKG21X", linkText);
 
-            cP("How fast it gets darker varries from one to another since the variable added is randomly choosen in between a certain range.");
+            cP("How fast it gets darker varries from one to another since the parameter added is randomly choosen in between a certain range.");
             cH3("Inspiration")
-            cP("Took a look at example 01_06 which is pretty simulat already to what I am doing.")
+            cP("I took a look at example 01_06 which was pretty simular to what I was working on already.")
 
             cImage("Doku/Ex01.png");
 
-            cP("I will try to ajust my grid so it also fills the whole screen with rectangles instead of trying to partually fill it with squares. Second step will be to add prefixed rectangles to every Grit Element and giving them a rotation variable that applies to all of them. Since I already have a prefixed Method that checks the x and y mouse position and applies changes to just the closest one I will additionally work with that.")
+            cP("I ajusted my grid so it also fills the whole screen with rectangles instead of trying to partually fill it with squares. Second step was adding prefixed rectangles to every Grit Element and giving them a certain rotation that applies to all of them simultaniously. Since I already have a prefixed Method that checks the x and y mouse position and applies changes to just the closest one I kept on working with that.")
+            
+            cH3("Ajustments")
             cP("After ajusting the grid system I did notice a small glitch that looked quite nice though.")
 
             cImage("Doku/14.png");
 
-            cH3("Ajustments")
-            cP("The reason for the glitch was quite obvious. I hadn't ajusted all code parts to rectangles yet, so while the width changed the height stayed static. I played with that for a moment.")
+            cP("The reason for the glitch was quite obvious. I hadn't ajusted all code parts to rectangles yet, so while the width changed the height stayed static. I played with that for a moment and saved it in a seperate script so I wouldn't loose it in the process.")
 
             cImage("Doku/15.png")
             cLink("https://editor.p5js.org/Oblivia/present/um-8CdOss", linkText);
 
-            cP("the ajustment when't easy though.")
+            cP("The ajustment then when't pretty well.")
 
             cImage("Doku/16.png")
             cLink("https://editor.p5js.org/Oblivia/present/FDE_JgICp", linkText);
 
 
-            cP("Adding the rectangles within the other rectangles also went pretty quick.")
+            cP("Adding the rectangles within the other rectangles also went down quickly.")
             cImage("Doku/18.png")
             cH3("Surprise")
-            cP("An unexpected but very welcome result occured though when moving the mouse over the screen. Mostly I just added a pulsate Method to the Segment class that is activated by the mouse moving over the screen and the different grid segments")
+            cP("An unexpected but very welcome result occured though when moving the mouse over the screen and seeing my movement effect in action. <br> Mostly I just added a pulsate Method to the Segment class that is activated by the mouse moving over the screen and the different grid segments.")
             createNewClone();
             child.innerHTML = (
               class Segments{
@@ -306,21 +305,20 @@ function caseSite() {
             cImage("Doku/17.png")
             cLink("https://editor.p5js.org/Oblivia/present/ruieMRhIO", linkText);
             
-            cP("Since working result here is actually less interesting than the accidental glitch I mentioned just before, I'm gonna ditch the plan and go along with this now. I started using a Grafics variable in p5 in which i created the grid background. On top of the the mouse movement is triggering the effect.")
+            cP("Since working result here is actually less interesting than the accidental glitch I mentioned just before, I'm decided to ditch the original plan and go along with this now. With a small ajustment for the maximum size of the effect I see this as a sucess. The patterns you can create can be really nice and it is just fun to go over it.")
             //18 was here
-            cP("With a small ajustment for the maximum size of the effect I see this as a sucess. The patterns you can create can be really nice")
             cImage2("Doku/20.png","Doku/22.png")
 
-            cP("Opened up a different Project based on this one, where the grid in the background stayes visible while you draw over it")
+            cP("I then opened up a different project based on this one, where the grid in the background stayes visible while you draw over it")
             cImage("Doku/19.png")
             cLink("https://editor.p5js.org/Oblivia/present/ZpsbzlHMo", linkText);
-            cP("The fading out is achived by drawing the Graphics background after every frame but with decreased visability. The effects made with this method look really nice and it's fun for me to move the mouse all over and make different patterns.")
+            cP("I started using a Grafics variable in p5 in which i created the grid background. I use this since this way I don't have to calculate all the Segments every Time I want to draw the background. On top of that graphic background the mouse movement triggers the effect. The fading out is achived by drawing the background after every frame but with decreased visability.")
             
             //B19, 20, 22
             
-            cP("Next I want to add a consistent movement. Starting with a rectangular one I guess, since everything is so nice and rectangular. To actually see the movement even after it did a round I first made a fading out effect for the glowing up elements.")
+            cP("Next I wanted to add a consistent movement. I first thought about starting with a rectangular one, since everything is so nice and rectangular. I redicided though and did a circular movement. To actually see the movement nicely after it is drawn I had to change the fading effect a little.")
             cImage("Doku/21.png") //B21
-            cP("After that implementing a circle pattern for the effect to follow wasn't that hard anymore. To make it more interesting I made two circles moving in opposite directions and additionally the mouse movement can still be seen on the screen.")
+            cP("Implementing a circle pattern for the effect to follow wasn't that hard anymore. It is really just circle calculation and then braking the coordinates down to the grid system with the map() function. To make it more interesting I made two circles moving in opposite directions and additionally the mouse movement can still be seen on the screen.")
             //B23, 23, 25
             cImage2("Doku/23.png", "Doku/24.png")
             cLink("https://editor.p5js.org/Oblivia/present/wpsCmH9b4", linkText);
@@ -331,20 +329,66 @@ function caseSite() {
             
             cH2("Day 3");
             
-            cP("Staring on a screen with multiplying rectangles can be quite exausting for the eyes so today I decided to start a different project. If later on I decide to go back to this grid I might implement a random movement of the effect instead of just a circular one.")
+            cP("Staring on a screen with multiplying rectangles can be quite exausting for the eyes so for this day I decided to start a different project. If later on I decide to go back to this grid I could implement a random movement of the effect instead of just a circular one.")
             
-            cP("After looking at some of the examples I chose to work with noise today.")
+            cP("After looking at some of the examples I chose to work with noise today. Specifically the one below caught my eye and I started recreating it myself.")
             //Ex02
             cImage("Doku/Ex02.png")
-            cP("I started ba simply making a normal circle with points at certain angles. Then those points were moved by a noise value. By increasing the radius every time and decreasing it again when it reached a certain value I created a somewhat mesmerising graphic.")
+            cP("I started ba simply making a normal circle with points at certain angles. Then the radius of those points were moved by a noise value. By increasing the radius every time and decreasing it again when it reached a certain value I created a somewhat mesmerising graphic.")
             //B26
             cImage("Doku/26.png")
-            cP("by changing a value I managed to make a smoother movement.")
+            cP("By changing some values I managed to make a smoother movement.")
             //B27,28
             cImage2("Doku/27.png", "Doku/28.png")
             cLink("https://editor.p5js.org/Oblivia/present/ROjPgl-TL", linkText);
             
-            cP("I then made a class and function to make these effects by clicking on the screen and have the circle expand from the mouse coordinates of the click")
+            cP("I then made a class and function to trigger these effects by clicking on the screen and have the circle expand from the mouse coordinates of the click")
+            //code?
+            createNewClone();
+            child.innerHTML = (
+              class Hypno{
+                constructor(x,y,n,r,xn,xoff,c){
+                  this.x = x;
+                  this.y = y;
+                  this.n = n;
+                  this.r = r;
+                  this.xn = xn;
+                  this.xoff = xoff;
+                  this.increasing = true;
+                  this.amount = num;
+                  num++;
+                  this.colour = c;
+                  this.ended = false;
+                }
+              
+                start(){
+                  //coordinates are given to the circlePoints() function which then actually draws the noise circle.
+                  colour = this.colour;
+                  xn = this.xn;
+                  circlePoints(this.x, this.y, this.n, this.r);
+                  this.xn += incrementXn;
+                  if(this.r <= diagonal/4 && this.increasing == true){
+                    this.r += speed;
+                  } else{
+                    this.r -= speed;
+                    if(this.r < 0 && this.ended == false){
+                      this.ended = true;
+                      this.end();
+                    }else{
+                      this.increasing = false;
+                    }
+                  }
+                }
+              
+                end(){
+                  //decreases the number of elements in the array and moves the elements up to simulate a Queue
+                  //There is a queue function in p5 I know it but I already had an array.
+                  num--;
+                  queueSimulator();
+                }
+              }
+            )
+            cPre();
             cImage2("Doku/29.png", "Doku/30.png")
             cLink("https://editor.p5js.org/Oblivia/present/SOwtrKTuV", linkText);
             //B29,B30
@@ -355,37 +399,56 @@ function caseSite() {
             //==================================================================
             cH2("Day 4")
             
-            cP("Today I started working more on my documentation. I decided here to do a Website, since I can implement the p5 scripts themselves directly in the web documentation too. I could also use p5 web and the links to make a documentation in any form but the p5 web edditor just seems to show unnecessairy errors once in a while which is really annoying. Plus this way I can use it as a portfolio start.")
+            cP("On this day I started working more on my actual documentation. I always wrote down my progress directly but up until now I didn't decide in what format I should make it. I decided here to do a Website since this way I can also use it as a portfolio start.")
             
-           cP("Besides working on my webpage for the documentation I also tried some new things with perlin noise method. I remembered a work from another digital artist that was shown to us in an article. He made an infinity loop that seemed to have a noise effect changing the lines. So I'm trying to make different forms which then get a perlin Noise Effect to animate them. I tried to kind of recreate it at first but I had problems making a nice transition from one circle to another, so I basically just made two circles with a Perlin Noise effect.") 
+           cP("Besides working on my webpage for the documentation I also tried some new things with perlin noise method. I remembered a work from another digital artist that was shown to us in an article. John Maedis made an infinity loop that seemed to have a noise effect changing the lines.") 
+          cImage("Doku/infinity.png")
+
+           cP("So I tried to make different forms which then get a perlin Noise Effect to animate them. I tried to kind of recreate the infinity loop at first but I had problems making a nice transition from one circle to another, so I basically just made two circles with a Perlin Noise effect.")
             
             //B31
             cImage("Doku/31.png")
             cLink("https://editor.p5js.org/Oblivia/present/izSW2vZxM", linkText)
-            cP("I am not super happy with the result. It works but I think it is kind of boring with just two circle. I might try another approach later on but for now I have decided to stick to working on the documentation website and not waste too much time on a work I'm not really into.")
+            cP("I was not and am still not really happy with the result. It works but I think it is kind of boring with just two circle. I might try another approach later on but for the moment I have decided to stick to working on the documentation website and not waste too much time on a sketch I don't really like.")
             
-            cP("After a while I went through my notes again and figured I could work on the rectangle grid again. I had a suggestion in my notes where I described that a random movement could be added. So I'm gonna do exactly that now. I added a noise movement to the scene and it does work and looks alright but I am not quite satisfied with it.")
+            cP("After a while I went through my notes again and figured I could work on the rectangle grid again. I read the suggestions in my documentation notes where I described that a random movement could be added. So I did exactly that. I added a noise movement to the scene and it does work and looks alright but I am not quite satisfied with it.")
             //B32
             cImage("Doku/32.png")
             cLink("https://editor.p5js.org/Oblivia/present/C-yVG_TS6", linkText);
-            cP("The noise movement isn't really recognizable and I think it would be nice if you could see the noise worm. So I'm starting a new project more of less from scratch. Even though I will be working in a new empty project I will try to implement some of the already used code.")
+            cP("The noise movement isn't really recognizable and I think it would be nice if you could see the noise 'worm'. So I wanted to start a new project more or less from scratch. Though speaking of a noise 'worm' I had an idea to combine it with the hypno circle, which was the circle with a noise value changing the radius on every step.")
             
             
-            cP("Speaking of the noise 'worm' I had an Idea to combine it with the hypno circle, wich was the circle with a noise value changing the radius on every step.")
-            
-            cP("A little side note: I realized just now seeing all my entries on my documentation website that I should have started with a dark background in the first place.")
+            cP("A little side note: I realized just now seeing all my entries on my documentation website that I should have started with a dark background in the first place. I just like it better.")
 
             //==================================================================
             //--------------------------- DAY 5 -------------------------------
             //==================================================================
             cH2("Day 5");
 
-            cP("We got a hint in the daily input today, that if we runn into performance issues with p5.js we could try out q5.js wich should work simularly and jst has a better performance");
-            cP("So my plan for today is to add an additional effect to my hypno circle. When it reaches a maximun of it's radius it shall stop and the Dots then become seperate objects that move via noise over the screen. So let's see how that works out.");
-            cP("I hd a nice effect in between while checking if the methods still worked when I changed a few things about it.");
+            cP("We got a hint in the daily input today, that if we run into performance issues with p5.js we could try out q5.js wich should work simularly and jst has a better performance. Might be usefull at some point.");
+            cP("So my plan for the day was to add an additional effect to my hypno circle. When it reaches a maximun of it's radius it shall stop and the Dots then become seperate objects that move via noise over the screen. So let's see how that works out.");
+            cP("I had a nice effect in between while checking if the methods still worked when I changed a few things about it.");
             //33
             cImage("Doku/33.png")
-            cP("So now after the 'Hypno Ring' expanded the dots turn into little worms crawling arround the screen")
+            cP("So now after the 'Hypno Ring' expanded the dots turn into little worms crawling arround the screen. I added a short method so they would reapear at the other end of the screen when they go over the edges of the canvas.")
+            createNewClone();
+            child.innerHTML = (
+              //the function is in the Worm class itself and 
+              //checks the coordinates of every circle that is drawn.
+              function stayInScreen(){
+                if(this.x < 0){
+                  this.x = screenWidth + this.x;
+                } else if(this.x > screenWidth){
+                  this.x -= screenWidth;
+                }
+                if(this.y < 0){
+                  this.y = screenHeight + this.y;
+                } else if(this.y > screenHeight){
+                  this.y -= screenHeight;
+                }
+              }
+            )
+            cPre();
             //34
             cImage("Doku/34.png");
             cLink("https://editor.p5js.org/Oblivia/present/pBH6w7cGa", linkText)
@@ -394,13 +457,13 @@ function caseSite() {
 
             //35
             cImage("Doku/35.png")
-            cP("this happens since I have not defined a maximum size for the circles. They are actually scaled by a random function but random is not truly random and they do just get bigger.")
+            cP("This happens since I have not defined a maximum size for the circles. They are actually scaled by a random function but random can make things huge too.")
 
-            cP("made some p5 sliders now for the first time to play arround with some variables. Also remembered, that I could make the hypno circle a little more smooth by adding more points that can be calculated.")
+            cP("I made some p5 sliders now for the first time so I could play arround with some variables. Also remembered, that I could make the hypno circle a little more smooth by adding more points that can be calculated.")
             //36
             cImage("Doku/36.png")
 
-            cP("So I started playing with the Variables and also filling the whole form with colour instead of only making outlines")
+            cP("So while playing with the variables I also figured I could fill the whole form with colour instead of only making outlines")
             //37,38, 39, 40
             cImage2("Doku/37.png", "Doku/38.png");
             cImage2("Doku/39.png", "Doku/40.png")
@@ -410,18 +473,18 @@ function caseSite() {
             //--------------------------- DAY 6 -------------------------------
             //==================================================================
             cH2("Day 6")
-            cP("So for today I was thinking I could try to implement sound to my noise circle. The sound waves should then change radius and height of the noise waves. Maybe the colour can change too but I'm not sure yet how much is possible with the sound implementation of p5.js")
+            cP("So for today I was thinking I could try to implement sound to my noise circle. The sound waves should then change radius and height of the noise waves. Maybe the colour can change by it too.")
             cP("I had some problems with the functionality at first an am still looking for a solution to just add the soundtrack from a youtube video as an input but sofar it seems to work.");
             //41 make picture of the working thing.
-            cImage("Doku/39.5.png")
+            cImage2("Doku/39.7.png", "Doku/39.8.png")
             cLink("https://editor.p5js.org/Oblivia/present/kBEHjG76G", linkText)
-            cP("I should add anoter changing Variable though that sets the noise offset amount.")
+            cP("I should add another changing variable that sets the radius offset amount.")
 
-            cP("In the input today we also got to see highlight.js from a classmate, which I did not know yet. I used this to add the colouring of the displayed code blocks you can see on this website.");
-            cP("for some reason there was a lot of bugfixing involved and I don't think I managed to actually do a lot. They were all basically pretty simple things but this was just not a good day for programming.");
+            cP("In the input today we also got to see highlight.js from a classmate, which I did not know yet. I used it to add the colouring of the displayed code blocks you can see on this website.");
+            cP("for some reason there was a lot of bugfixing involved and I don't think I managed to actually do a lot. The bugs weren't that bad but it just doesn't seem to be a good day for programming.");
             //Add Code example 
-            cP("I started another sketch where I am trying to make a 3D Sphere with vertecies. The plan is to later on set those verticies with a noise offset amount. I didn't get very far yet and gotta finish thinking through how to calculate all the vertecies and connecting them. In a first tryout code I simply tried out making the veritces and connecting them to a simple form.");
-            cP("Using my own canvas on the website works in the context of it is drawing something. Sadly it also does not show the WebGL sketch correctly.")
+            cP("I started another sketch where I am trying to make a 3D Sphere with vertecies. The plan is to later on set those verticies with a noise offset amount. I didn't get very far on this day and had to finish thinking through how to calculate all the vertecies and connecting them. <br> In a first tryout code I simply tried out making the veritces and connecting them to a simple form.");
+            //cP("Using my own canvas on the website works in the context of it is drawing something. Sadly it also does not show the WebGL sketch correctly.")
 
             createNewClone();
             child.innerHTML = (
@@ -448,32 +511,32 @@ function caseSite() {
             );
             cPre();
 
-            cP("Also since creating a queue did not work for me in p5.js I am again just using Arrays.")
+            cP("Also since creating a queue did not work for me in p5.js I am again just using arrays. Instead of a p5 queue I got a stack when I tried it but I was probably just using it wrong.")
 
             //==================================================================
             //--------------------------- DAY 7 -------------------------------
             //==================================================================
             cH2("Day 7");
-            cP("I knew from the start that I will have some errors in my calculation. What happened was still qute surprising.");
+            cP("I knew from the start that I will have some errors in my calculation. What happened was still interesting to watch.");
             //B50
             cImage("Doku/50.png")
 
-            cP("Besides the y height calculation which I knew from the start was just wrong, there was something off with the vertecies connection. For a long Time I was not sure what was happening but some console logs helped pinpoint the problem. In fact it worked out pretty fast after that. I accidentally overwrote the coordinates in the second array so there were Nan there when I tried to use them.");
+            cP("Besides the y height calculation which I knew from the start were just wrong, there was something off with the vertecies connection. For a long Time I was not sure what was happening but some console logs helped pinpoint the problem. In fact it worked out pretty fast after that. I accidentally overwrote the coordinates in the second array so there were Nan there when I tried to use them.");
             cImage2("Doku/51.png", "Doku/52.png")
             //51,52
-            cP("After some more confusion I finally figured some things out. The sphere is still not perfect but thankfully that isn't exactly my aim. It's an Egg now and that's fine.")
+            cP("After some more confusion I finally figured some more things out. The sphere is still not perfect but thankfully that isn't exactly my aim. It's an Egg now and that's fine.")
             cImage2("Doku/53.png", "Doku/54.png")
             //53,54
             cP("Next I'll have to add some light source, otherwise the Noise effect probably won't really be seen.")
-            cP("Sadly the light doesn't really seem to work with self made objects in p5. If I don't set a sphere into it it does nothing with point lights, which it actually should. It is an odd little but but beginShape(), endShape() and normalMaterial(), pointLight() aperantly should not be used together at this point in p5.js. A forum seemed to adress the same issue with no solution to it.")
+            cP("Sadly the light doesn't really seem to work with self made objects in p5 and WebGL mode. If I don't set a sphere into it it does nothing with point lights, which it actually should. It is an odd little bug but beginShape(), endShape() and normalMaterial(), pointLight() aperantly should not be used together at this point in p5.js. A forum seemed to adress the same issue with no solution to it.")
             cImage2("Doku/55.png","Doku/56.png")
             cImage("Doku/57.png")
-            cP("In the picture on the left you can see part of the default p5 sphere at the top of my droplet. The sphere is nicely showing me how the normal Material is supposed to look. If i draw my drop with the normal material it just turns out white like you can see on the two pictures before.")
+            cP("In the picture above on the left you can see part of the default p5 sphere at the top of my droplet. The sphere is nicely showing me how the normal Material is supposed to look. If i draw my drop with the normal material it just turns out white like you can see on the two pictures before.")
             
             cH3("Recomendation")
             cP("My recomendation at this point is to not use custom 3D objects with p5.js. The result is not worth the effort. Plus saving sketches seperately that have accidentaly created cool forms is a good thing that I have indeed forgotten about today.")
 
-            cH3("Strokes")
+            cH3("Fixes")
             cP("Since the Materials don't work on my selfmade object, I have gotten the suggestion to just use the strokes. That does look quite nice I just can't make too many height or rotation segments since it seems to be a little to much to render when looping the whole sketch.")
             cImage2("Doku/58.png", "Doku/59.png")
             cP("It looks really nice this way and can still be animated or rather looped.")
@@ -559,21 +622,23 @@ function caseSite() {
             cPre();
 
             cH3("WebGL Problems")
-           cP( "Besides all that I started putting my sketches into the p5 web editor and had to make an unpleseant discovery. Sadly WebGL dows noe seem to be working in the web editor, so I'll have to try and make another canvas on my website tomorrow.");
+           cP( "Besides all that I started putting my sketches into the p5 web editor and had to make an unpleseant discovery. Sadly WebGL does not seem to be working correctly in the web editor, the forums didn't help eighter so I tried to make another canvas on my website the next day.");
 
            //==================================================================
             //--------------------------- DAY 7 -------------------------------
             //==================================================================
            cH2("Day 8")
-           cP("Plan for today was to do some ajustments to my music reaction noise sketch and mostly work on the documentation since the WebGL thing seems to need quite some more work to display it on this website.");
-           cP("fist off I suddenly had a plan on how to fix my sphere calculation so it would actually turn out as a sphere. I had to map the sin and cos values to the height and radius of the sphere.");
+           cP("Plan for this day was to do some ajustments to my music reaction noise sketch and mostly work on the documentation since the WebGL thing seemed to need quite some more work to display it on this website.");
+           cP("I first off suddenly knew how to fix my sphere calculation so it would actually turn out as a sphere. I had to map the sin and cos values to the height and radius of the sphere. Since I already knew how now I also felt the need to implement it.");
            //62
            cImage("Doku/62.png")
            cLink("https://editor.p5js.org/Oblivia/present/11fvmlVWl", linkText);
 
-           cP("Now for the documentation I gotta try and make a second canvas on my website that does not interfere with the one I already have in the background. I tried it out real quick in a sketch and creating a second canvas with a background colour on a already existing canvas leads to somewhat of a bug. The second canvas is displayed in the size it is supposed to but it takes the colour from the first canvas and makes everything else white. In this case instead of creating a second canvas I can link the document to a page where my sketch is then drawn on the already existing canvas. I did that and the resuld was dissapointing. The same problem as with the p5.js web editor. It just doesn't seem to work.");
-           cH3("Wasted Time");
-           cP("So I spent the whole morning trying to make this work and I was ready to give up at this point. I just wanted to try one more thing. Instead of using the prefixed p5.js files in the online editor I imported the ones I used in the Atom editor. Surprisingly that made it work. So one but fixed.")
+           cP("Now for the documentation I tried and make a second canvas on my website that didn't interfere with the one I already have in the background. I tried it out real quick in a sketch and creating a second canvas with a background colour on a already existing canvas leads to somewhat of a bug. The second canvas is displayed in the size it is supposed to but it takes the colour from the first canvas and makes everything else white. In this case instead of creating a second canvas I can link the document to a page where my sketch is then drawn on the already existing canvas. I did that and the resuld was dissapointing. The same problem as with the p5.js web editor.");
+           cH3("Bugs");
+           cP("So I spent the whole morning trying to make this work and I was ready to give up at some point and just display a video of it. I just wanted to try one more thing. Instead of using the prefixed p5.js files in the online editor I imported the ones I used in the Atom editor. Surprisingly that made it work. I will not question why I'm just glad it works.");
+           cP("After my bugfixes I continued adding links to my p5 Sketches. Seperate ones on the P5.js Sketch site and links on this documentation page so the sketches can be accessed directly. Also published my site today for the first time ever on github. It can now be accessed on any computer :) (It's not optimised for phone use yet though)");
+        
         
             break;
 
@@ -646,7 +711,7 @@ function caseSite() {
             cLink("https://editor.p5js.org/Oblivia/present/pBH6w7cGa", linkText)
 
             cH3("Noise but Different");
-            cImage("Doku/39.png");
+            cImage("Doku/39.8.png");
             cLink("https://editor.p5js.org/Oblivia/present/kBEHjG76G", linkText)
 
             cH2("3D");
