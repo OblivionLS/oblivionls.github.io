@@ -248,7 +248,7 @@ function caseSite() {
             //--------------------------- DAY 2 -------------------------------
             //==================================================================
             cH2("Day 2")
-            cP("I did a last ajustment to the prior script I made and added some colour. Until a certain darkness is achived, the colour just gets darker when a grid part is activated. Every Segment has it's own darkness parameter so it doesn't simultaniously turn everything darker.");
+            cP("I did a last adjustment to the prior script I made and added some colour. Until a certain darkness is achived, the colour just gets darker when a grid part is activated. Every Segment has its own darkness parameter so it doesn't simultaniously turn everything darker.");
             cImage("Doku/13.png")
             cLink("https://editor.p5js.org/Oblivia/present/hKEAKG21X", linkText);
 
@@ -258,10 +258,10 @@ function caseSite() {
 
             cImage("Doku/Ex01.png");
 
-            cP("I ajusted my grid so it also fills the whole screen with rectangles instead of trying to partually fill it with squares. Second step was adding prefixed rectangles to every Grit Element and giving them a certain rotation that applies to all of them simultaniously. Since I already have a prefixed Method that checks the x and y mouse position and applies changes to just the closest one I kept on working with that.")
+            cP("I adjusted my grid so it also fills the whole screen with rectangles instead of trying to partually fill it with squares. Second step was adding prefixed rectangles to every Grit Element and giving them a certain rotation that applies to all of them simultaniously. Since I already have a prefixed Method that checks the x and y mouse position and applies changes to just the closest one I kept on working with that.")
             
             cH3("Adjustments")
-            cP("After ajusting the grid system I did notice a small glitch that looked quite nice though.")
+            cP("After adjusting the grid system I did notice a small glitch that looked quite nice though.")
 
             cImage("Doku/14.png");
 
@@ -270,7 +270,7 @@ function caseSite() {
             cImage("Doku/15.png")
             cLink("https://editor.p5js.org/Oblivia/present/um-8CdOss", linkText);
 
-            cP("The ajustment then when't pretty well.")
+            cP("The adjustment then went pretty well.")
 
             cImage("Doku/16.png")
             cLink("https://editor.p5js.org/Oblivia/present/FDE_JgICp", linkText);
@@ -305,7 +305,7 @@ function caseSite() {
             cImage("Doku/17.png")
             cLink("https://editor.p5js.org/Oblivia/present/ruieMRhIO", linkText);
             
-            cP("Since working result here is actually less interesting than the accidental glitch I mentioned just before, I'm decided to ditch the original plan and go along with this now. With a small ajustment for the maximum size of the effect I see this as a sucess. The patterns you can create can be really nice and it is just fun to go over it.")
+            cP("Since working result here is actually less interesting than the accidental glitch I mentioned just before, I'm decided to ditch the original plan and go along with this now. With a small adjustment for the maximum size of the effect I see this as a sucess. The patterns you can create can be really nice and it is just fun to go over it.")
             //18 was here
             cImage2("Doku/20.png","Doku/22.png")
 
