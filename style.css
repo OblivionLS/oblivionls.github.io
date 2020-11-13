@@ -208,3 +208,15 @@ body {
     text-decoration: none !important;
 }
 
+p a{
+    color: var(--title) !important;
+}
+
+p a:hover{
+    color: var(--text) !important
+}
+
+a :active{
+    color: var(--title) !important
+}
+
