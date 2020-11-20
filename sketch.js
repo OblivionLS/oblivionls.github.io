@@ -767,7 +767,8 @@ function caseSite() {
       content.innerHTML = "";
       cH1("Stift Plotter");
       cP("Das Modul 'Prototyping Extended' hat für uns in diesem Jahr ein anderes Format angenommen. Durch die Corona Virus Pandemie konnten wir und nicht vor Ort treffen und zusammen an einem Projekt arbeiten. Jedoch wurde organisiert, dass jedem von uns ein Paket zugesendet wurde. Dafin befanden sich ettliche Werkzeuge und Materialien mit denen wir unseren Plotter zusammenbauen konnten.");
-      cP("Hier ist unter anderem eine Dokumentation zu meinem Vorgang zu finden. Wenn es jemand gerne selber ausprobieren möchte, kann den Code in meinem Github repository einsehen.")
+      //cP("Hier ist unter anderem eine Dokumentation zu meinem Vorgang zu finden. Wenn es jemand gerne selber ausprobieren möchte, kann den Code in meinem Github repository einsehen.")
+      cP("Die Dokumentation des Projektes wird in Zukunft hier erscheinen. Im Github Repository kann jedoch auch jetzt schon der Code eingesehen werden und allenfalls aufprobiert.");
       cLink("https://github.com/OblivionLS/stutprox20", "Github Repository")
 
       
@@ -853,18 +854,6 @@ function cIndex() {
     header.appendChild(ul);
     ul.appendChild(ux);
     ux.appendChild(linkux);
-    
-    //===============================================
-    //About Me
-    //=============================================
-    doku = document.createElement("li");
-    linkDoku = document.createElement("a");
-    linkDoku.setAttribute("href", "/me/main.html");
-    linkDoku.innerHTML = "About Me"
-
-    header.appendChild(ul);
-    ul.appendChild(doku);
-    doku.appendChild(linkDoku);
 
     //===============================================
     //Prototyping Extended
@@ -873,6 +862,18 @@ function cIndex() {
     linkDoku = document.createElement("a");
     linkDoku.setAttribute("href", "/plotter/main.html");
     linkDoku.innerHTML = "Prototyping"
+
+    header.appendChild(ul);
+    ul.appendChild(doku);
+    doku.appendChild(linkDoku);
+
+    //===============================================
+    //About Me
+    //=============================================
+    doku = document.createElement("li");
+    linkDoku = document.createElement("a");
+    linkDoku.setAttribute("href", "/me/main.html");
+    linkDoku.innerHTML = "About Me"
 
     header.appendChild(ul);
     ul.appendChild(doku);
@@ -909,9 +910,9 @@ function cIndex() {
     linkDoku.setAttribute("href", "/plotter/doku.html");
     linkDoku.innerHTML = "Dokumentation"
 
-    header.appendChild(ul);
-    ul.appendChild(doku);
-    doku.appendChild(linkDoku);
+    //header.appendChild(ul);
+    //ul.appendChild(doku);
+    //doku.appendChild(linkDoku);
 
 
   }
