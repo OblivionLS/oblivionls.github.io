@@ -843,41 +843,41 @@ function cIndex() {
     ul.appendChild(doku);
     doku.appendChild(linkDoku);
 
-    //===============================================
-    //UX
-    //=============================================
-    let ux = document.createElement("li");
-    let linkux = document.createElement("a");
-    linkux.setAttribute("href", "/ux/main.html");
-    linkux.innerHTML = "UX"
+    // //===============================================
+    // //UX
+    // //=============================================
+    // let ux = document.createElement("li");
+    // let linkux = document.createElement("a");
+    // linkux.setAttribute("href", "/ux/main.html");
+    // linkux.innerHTML = "UX"
 
-    header.appendChild(ul);
-    ul.appendChild(ux);
-    ux.appendChild(linkux);
+    // header.appendChild(ul);
+    // ul.appendChild(ux);
+    // ux.appendChild(linkux);
 
-    //===============================================
-    //Prototyping Extended
-    //=============================================
-    doku = document.createElement("li");
-    linkDoku = document.createElement("a");
-    linkDoku.setAttribute("href", "/plotter/main.html");
-    linkDoku.innerHTML = "Prototyping"
+    // //===============================================
+    // //Prototyping Extended
+    // //=============================================
+    // doku = document.createElement("li");
+    // linkDoku = document.createElement("a");
+    // linkDoku.setAttribute("href", "/plotter/main.html");
+    // linkDoku.innerHTML = "Prototyping"
 
-    header.appendChild(ul);
-    ul.appendChild(doku);
-    doku.appendChild(linkDoku);
+    // header.appendChild(ul);
+    // ul.appendChild(doku);
+    // doku.appendChild(linkDoku);
 
-    //===============================================
-    //About Me
-    //=============================================
-    doku = document.createElement("li");
-    linkDoku = document.createElement("a");
-    linkDoku.setAttribute("href", "/me/main.html");
-    linkDoku.innerHTML = "About Me"
+    // //===============================================
+    // //About Me
+    // //=============================================
+    // doku = document.createElement("li");
+    // linkDoku = document.createElement("a");
+    // linkDoku.setAttribute("href", "/me/main.html");
+    // linkDoku.innerHTML = "About Me"
 
-    header.appendChild(ul);
-    ul.appendChild(doku);
-    doku.appendChild(linkDoku);
+    // header.appendChild(ul);
+    // ul.appendChild(doku);
+    // doku.appendChild(linkDoku);
 
     //ul.appendChild(examples);
     //examples.appendChild(linkExamples);
