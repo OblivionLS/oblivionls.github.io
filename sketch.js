@@ -792,7 +792,7 @@ function cIndex() {
   if ( path == "/ga/main.html" || path == "/ga/examples.html") {
     let h1 = document.createElement("h1");
     let a = document.createElement("a")
-    a.setAttribute("href", "/overview.html");
+    a.setAttribute("href", "/");
     a.innerHTML = "Generative <br> Art"
     header.appendChild(h1);
     h1.appendChild(a);
@@ -1021,24 +1021,24 @@ function cIndex() {
     ul.appendChild(doku);
     doku.appendChild(linkDoku);
 
-    //Link to UX main page
-    let ux = document.createElement("li");
-    let linkux = document.createElement("a");
-    linkux.setAttribute("href", "/ux/main.html");
-    linkux.innerHTML = "UX"
+    // //Link to UX main page
+    // let ux = document.createElement("li");
+    // let linkux = document.createElement("a");
+    // linkux.setAttribute("href", "/ux/main.html");
+    // linkux.innerHTML = "UX"
 
-    header.appendChild(ul);
-    ul.appendChild(ux);
-    ux.appendChild(linkux);
+    // header.appendChild(ul);
+    // ul.appendChild(ux);
+    // ux.appendChild(linkux);
 
-    doku = document.createElement("li");
-    linkDoku = document.createElement("a");
-    linkDoku.setAttribute("href", "/me/main.html");
-    linkDoku.innerHTML = "About Me"
+    // doku = document.createElement("li");
+    // linkDoku = document.createElement("a");
+    // linkDoku.setAttribute("href", "/me/main.html");
+    // linkDoku.innerHTML = "About Me"
 
-    header.appendChild(ul);
-    ul.appendChild(doku);
-    doku.appendChild(linkDoku);
+    // header.appendChild(ul);
+    // ul.appendChild(doku);
+    // doku.appendChild(linkDoku);
   }
 
 
